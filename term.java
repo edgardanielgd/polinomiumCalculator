@@ -6,7 +6,6 @@ public class term{
 			this.coeficient=coeficient;
 			this.variable=variable;
 			this.grade=grade;
-			System.out.println(this.coeficient+" "+this.variable+" "+this.grade);
 		}
 		public float GetGrade() {
 			return this.grade;
@@ -23,7 +22,17 @@ public class term{
 		public void SetVariable(char newV) {
 			this.variable=newV;
 		}
-		public void SetCoeficient(float newC) {
+		public void SetCoeficient(double newC) {
 			this.coeficient=newC;
+		}
+		public String toString(boolean first) {
+			String ret;
+			if(first || this.coeficient<0) {
+				ret= new String(String.valueOf(this.coeficient)+String.valueOf(this.variable)+"^"+String.valueOf(this.grade));
+				return ret;
+			}else {
+				ret= new String("+"+String.valueOf(this.coeficient)+String.valueOf(this.variable)+"^"+String.valueOf(this.grade));
+				return ret;
+			}
 		}
 }
